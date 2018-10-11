@@ -165,7 +165,7 @@
                             android:textColor="@android:color/white"/>
 
                         <TextView
-                            android:id="@+id/pm2.5_data"
+                            android:id="@+id/pm2_5_data"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/pm2.5"
@@ -179,6 +179,7 @@
                 </RelativeLayout>
 
                 <TextView
+                    android:id="@+id/pm2_5_quality"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/Pm2.5_info"
@@ -216,6 +217,7 @@
                         android:src="@mipmap/biz_plugin_weather_qing"/>
 
                     <TextView
+                        android:id="@+id/temp_now"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:singleLine="true"
@@ -254,7 +256,7 @@
                         android:singleLine="true"
                         android:text="-2°C~7°C"
                         android:layout_marginTop="5dp"
-                        android:textSize="30sp"
+                        android:textSize="20sp"
                         android:textColor="@android:color/white"/>
 
                     <!--today climate-->
