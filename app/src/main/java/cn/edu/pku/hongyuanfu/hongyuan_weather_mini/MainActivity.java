@@ -1,5 +1,6 @@
 package cn.edu.pku.hongyuanfu.hongyuan_weather_mini;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Handler;
 import android.os.Message;
@@ -34,9 +35,11 @@ import cn.edu.pku.hongyuanfu.util.NetUtil;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private static final int UPDATE_TODAY_WEATHER = 1;
+    private ImageView pmImg;
     private ImageView mUpdateBtn;
     private TextView cityTv, timeTv, humidityTv, weekTv, pmDataTv, pmQualityTv, temperatureTv, climateTv, windTv, city_name_Tv, tmp_nowTv;
-    private ImageView weatherImg, pmImg;
+    private ImageView weatherImg;
+    private ImageView mCitySelect;
 
     private Handler mHandler = new Handler() {
         public void handleMessage(android.os.Message msg) {
@@ -66,6 +69,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Log.d("MyWeather", "网络挂了");
             Toast.makeText(MainActivity.this, "网络挂了",Toast.LENGTH_SHORT).show();
         }
+
+        mCitySelect = (ImageView) findViewById(R.id.title_city);
+        mCitySelect.setOnClickListener(this);
+
         initView();
     }
 
@@ -315,6 +322,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
+
+        if (view.getId() == R.id.title_city){
+            Intent i = new Intent(this, SelectCity.class);
+            startActivityForResult(i, 1);
+        }
+
         if (view.getId() == R.id.title_update_btn){
             SharedPreferences sharedPreferences = getSharedPreferences("config", MODE_PRIVATE);
             String cityCode = sharedPreferences.getString("main_city_code","101010100");
@@ -327,6 +340,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             else{
                 Log.d("MyWeather", "网络挂了");
                 Toast.makeText(MainActivity.this, "网络挂了",Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == 1 && resultCode == RESULT_OK) {
+            String newCityCode = data.getStringExtra("cityCode");
+            Log.d("MyWeather", "选择城市为" + newCityCode);
+
+
+            if (NetUtil.getNetworkState(this) != NetUtil.NETWORK_NONE) {
+                Log.d("MyWeather", "network is ok");
+                queryWeatherCode(newCityCode);
+            } else {
+                Log.d("MyWeather", "网络挂了");
+                Toast.makeText(MainActivity.this, "网络挂了", Toast.LENGTH_SHORT).show();
             }
         }
     }
