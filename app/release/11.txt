@@ -1,0 +1,56 @@
+company with 上市 has average wage 15269.662921348314
+company without 上市 has average wage 19912.0
+
+company with 研发 has average wage 17530.985915492958
+company without 研发 has average wage 21758.547008547008
+
+company with 创新 has average wage 18722.397476340695
+company without 创新 has average wage 19779.41176470588
+
+job with Hadoop has average wage 21219.51219512195
+job without Hadoop has average wage 19060.218978102188
+
+job with Hive has average wage 22500.0
+job without Hive has average wage 19058.61456483126
+
+job with Spark has average wage 20277.777777777777
+job without Spark has average wage 19141.04882459313
+
+job with 数据挖掘 has average wage 21299.065420560746
+job without 数据挖掘 has average wage 18746.887966804978
+
+job with 机器学习 has average wage 21227.272727272728
+job without 机器学习 has average wage 17444.267515923566
+
+job with Java has average wage 21616.279069767443
+job without Java has average wage 18799.20477137177
+
+job with Python has average wage 22164.102564102563
+job without Python has average wage 17748.730964467006
+
+job with 数据结构 has average wage 21914.634146341465
+job without 数据结构 has average wage 18773.175542406312
+
+job with tensorflow has average wage 21983.333333333332
+job without tensorflow has average wage 19061.717352415028
+
+job with 硕士 has average wage 22376.168224299065
+job without 硕士 has average wage 17404.0
+
+job with 开发经验 has average wage 21170.58823529412
+job without 开发经验 has average wage 18415.27446300716
+
+job with 论文 has average wage 24363.636363636364
+job without 论文 has average wage 18560.22944550669
+
+job with re.compile('\\(new_line\\).*自然语言处理.*实践.*\\(new_line\\)') has average wage 24454.545454545456
+job without re.compile('\\(new_line\\).*自然语言处理.*实践.*\\(new_line\\)') has average wage 19110.726643598617
+
+job with re.compile('\\(new_line\\).*论文.*优先.*\\(new_line\\)') has average wage 27144.444444444445
+job without re.compile('\\(new_line\\).*论文.*优先.*\\(new_line\\)') has average wage 18554.227941176472
+
+job with re.compile('\\(new_line\\).*高水平.*论文.*\\(new_line\\)') has average wage 31666.666666666668
+job without re.compile('\\(new_line\\).*高水平.*论文.*\\(new_line\\)') has average wage 19082.332761578044
+
+job with re.compile('\\(new_line\\).*经验.*\\(new_line\\)') has average wage 20449.064449064448
+job without re.compile('\\(new_line\\).*经验.*\\(new_line\\)') has average wage 13694.444444444445
